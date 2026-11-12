@@ -328,7 +328,7 @@ function PropertyCard({
           </Link>
 
           <Link
-            href={`/contact?property=${encodeURIComponent(property.name)}`}
+            href="/inquires"
             className="flex min-h-[53px] flex-1 items-center justify-center rounded-full bg-[#07583F] px-3 text-center text-[14px] font-medium text-white shadow-[0_4px_12px_rgba(7,88,63,0.18)] transition-all hover:bg-[#06452F] sm:text-[15px]"
           >
             Inquire

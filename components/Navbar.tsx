@@ -70,7 +70,7 @@ export default function Navbar() {
 
           {/* Inquiry button */}
           <Link
-            href="/contact"
+            href="/inquires"
             className="ml-1 inline-flex h-[39px] items-center justify-center rounded-full bg-[#07563D] px-5 text-[14px] font-semibold text-white shadow-[0_3px_10px_rgba(7,86,61,0.17)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#06462F] hover:shadow-lg"
           >
             Send Inquiry
@@ -81,7 +81,7 @@ export default function Navbar() {
         {/* Tablet navigation CTA */}
         <div className="hidden items-center gap-3 md:flex xl:hidden">
           <Link
-            href="/contact"
+            href="/inquires"
             className="inline-flex h-[39px] items-center rounded-full bg-[#07563D] px-5 text-sm font-semibold text-white transition-colors hover:bg-[#06462F]"
           >
             Send Inquiry
@@ -144,7 +144,7 @@ export default function Navbar() {
 
           {/* Mobile inquiry button */}
           <Link
-            href="/contact"
+            href="/inquires"
             onClick={closeMenu}
             className="mt-5 flex h-[48px] w-full items-center justify-center rounded-full bg-[#07563D] text-[15px] font-semibold text-white shadow-md transition-colors hover:bg-[#06462F]"
           >
