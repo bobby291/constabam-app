@@ -1,7 +1,8 @@
 
 import HeroPage from "@/components/Hero"
+import BookingProcess from "@/components/booking-process"
 import FeaturedHomes from "@/components/FeaturedHomes";
-
+import Destinations from "@/components/Destination"
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#EAF3ED]">
@@ -11,6 +12,8 @@ export default function Home() {
       <HeroPage />
       </section>
       <FeaturedHomes />
+      <Destinations />
+      <BookingProcess />
     </main>
   );
 }

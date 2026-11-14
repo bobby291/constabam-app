@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
@@ -10,7 +12,6 @@ const navLinks = [
   { label: "Booking Process", href: "/booking-process" },
   { label: "About Us", href: "/about" },
   { label: "FAQs", href: "/faqs" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -20,42 +21,47 @@ export default function Navbar() {
 
   return (
     <header className="relative z-50 w-full bg-white">
-
       {/* Top green and gold accent line */}
       <div className="h-[4px] w-full bg-[linear-gradient(90deg,#07563D_0%,#07563D_60%,#C5A13B_100%)]" />
 
       {/* Navigation */}
       <nav className="relative mx-auto flex min-h-[80px] w-full items-center justify-between border-b border-[#E8EDE9] px-5 py-3 sm:px-8 lg:px-12">
 
-        {/* Brand Logo */}
-        <Link
-          href="/"
-          onClick={closeMenu}
-          aria-label="Constabam Shortlet home"
-          className="group flex shrink-0 items-center gap-2.5"
-        >
-          {/* Logo mark */}
-          <div className="flex h-[52px] w-[52px] items-center justify-center rounded-[13px] border-2 border-[#C7A33C] bg-[#07563D] shadow-[0_2px_5px_rgba(0,0,0,0.10)] transition-transform duration-300 group-hover:scale-105">
-            <span className="font-serif text-[26px] font-medium text-[#D7B447]">
-              C
-            </span>
-          </div>
 
-          {/* Brand name */}
-          <div className="flex flex-col">
-            <span className="font-[family-name:var(--font-display)] text-[23px] font-medium leading-none tracking-[-0.035em] text-[#171815] sm:text-[25px]">
-              Constabam
-            </span>
+{/* Brand Logo */}
 
-            <span className="mt-[6px] text-[10px] font-semibold uppercase tracking-[0.34em] text-[#B99A40]">
-              SHORTLET
-            </span>
-          </div>
-        </Link>
+{/* Brand Logo */}
+<Link
+  href="/"
+  onClick={closeMenu}
+  aria-label="Constabam Shortlet home"
+  className="group flex shrink-0 items-center gap-3"
+>
+  {/* Logo Image */}
+  <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center overflow-hidden rounded-[13px] border border-[#E8EDE9] bg-white shadow-[0_2px_5px_rgba(0,0,0,0.10)] transition-transform duration-300 group-hover:scale-105">
+    <img
+      src="/logo.png"
+      alt="Constabam Shortlet logo"
+      className="h-full w-full object-contain"
+    />
+  </div>
+
+  {/* Brand Name */}
+  <div className="flex flex-col">
+    <span className="font-[family-name:var(--font-display)] text-[23px] font-medium leading-none tracking-[-0.035em] text-[#171815] sm:text-[25px]">
+      Constabam
+    </span>
+
+    <span className="mt-[6px] text-[10px] font-semibold uppercase tracking-[0.34em] text-[#B99A40]">
+      SHORTLET
+    </span>
+  </div>
+</Link>
+
+
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-6 xl:flex">
-
           <div className="flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
@@ -75,7 +81,6 @@ export default function Navbar() {
           >
             Send Inquiry
           </Link>
-
         </div>
 
         {/* Tablet navigation CTA */}
@@ -106,13 +111,8 @@ export default function Navbar() {
           aria-expanded={mobileMenuOpen}
           className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#E5EAE6] text-[#07563D] transition-colors hover:bg-[#F0F5F1] md:hidden"
         >
-          {mobileMenuOpen ? (
-            <X size={23} />
-          ) : (
-            <Menu size={23} />
-          )}
+          {mobileMenuOpen ? <X size={23} /> : <Menu size={23} />}
         </button>
-
       </nav>
 
       {/* Responsive dropdown menu */}
@@ -124,7 +124,6 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto max-w-7xl px-6 py-5">
-
           <div className="flex flex-col">
             {navLinks.map((link) => (
               <Link
@@ -134,10 +133,7 @@ export default function Navbar() {
                 className="flex items-center justify-between border-b border-[#EEF1EE] py-4 text-[15px] font-medium text-[#343A35] transition-colors hover:text-[#B99A40]"
               >
                 {link.label}
-                <ArrowUpRight
-                  size={16}
-                  className="text-[#B99A40]"
-                />
+                <ArrowUpRight size={16} className="text-[#B99A40]" />
               </Link>
             ))}
           </div>
@@ -154,10 +150,8 @@ export default function Navbar() {
           <p className="mt-5 text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-[#B99A40]">
             CONSTABAM SHORTLET
           </p>
-
         </div>
       </div>
-
     </header>
   );
 }

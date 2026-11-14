@@ -31,9 +31,9 @@ type Property = {
   name: string;
   city: string;
   destination: string;
-  bedrooms: number;
-  bathrooms: number;
-  maxGuests: number;
+  bedrooms: number | null;
+  bathrooms: number | null;
+  maxGuests?: number;
   nightlyRate: number;
   description: string;
   coverPhoto: string;
@@ -44,141 +44,501 @@ type Property = {
 };
 
 // ============================================
+// PROPERTY IMAGE HELPER
+// ============================================
+
+// ============================================
+// PROPERTY IMAGE HELPER
+// ============================================
+
+const getPropertyImage = (number: number) => {
+  const imageNumber = ((number - 1) % 30) + 1;
+
+  return `/images/picture/IMG_${imageNumber}.jpg`;
+};
+
+// ============================================
 // PROPERTY DATA
-// Replace this sample data with your API data.
 // ============================================
 
 const PROPERTY_DATA: Property[] = [
   {
     id: "1",
-    slug: "luxury-miami-beach-villa",
-    name: "Luxury Miami Beach Villa",
+    slug: "downtown-miami-residence",
+    name: "Downtown Miami Residence",
     city: "Miami",
     destination: "Florida",
-    bedrooms: 4,
-    bathrooms: 3,
-    maxGuests: 8,
-    nightlyRate: 350,
-    description:
-      "Experience exceptional comfort in this beautifully designed villa featuring spacious interiors, premium amenities and easy access to Miami Beach.",
-    coverPhoto:
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=85",
-    gallery: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=85",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=85",
-    ],
-    amenities: ["WiFi", "Swimming Pool", "Parking", "Air Conditioning"],
-    featured: true,
+    bedrooms: 2,
+    bathrooms: 2.5,
+    nightlyRate: 250,
+    description: "A comfortable Miami residence offering spacious interiors and convenient access to the city's attractions.",
+    coverPhoto: getPropertyImage(1),
+    gallery: [getPropertyImage(1)],
+    amenities: [],
+    featured: false,
     available: true,
   },
   {
     id: "2",
-    slug: "modern-houston-city-apartment",
-    name: "Modern Houston City Apartment",
-    city: "Houston",
-    destination: "Texas",
+    slug: "las-olas-isle-retreat",
+    name: "Las Olas Isle Retreat",
+    city: "Fort Lauderdale",
+    destination: "Florida",
     bedrooms: 2,
     bathrooms: 2,
-    maxGuests: 4,
-    nightlyRate: 180,
-    description:
-      "A contemporary city apartment with elegant furnishings, modern finishes and convenient access to Houston's restaurants, shopping and business districts.",
-    coverPhoto:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=85",
-    gallery: [
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=85",
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=85",
-    ],
-    amenities: ["WiFi", "Parking", "Coffee Maker", "Air Conditioning"],
+    nightlyRate: 250,
+    description: "A welcoming retreat in Fort Lauderdale, ideal for guests seeking comfort and convenient city access.",
+    coverPhoto: getPropertyImage(2),
+    gallery: [getPropertyImage(2)],
+    amenities: [],
     featured: false,
     available: true,
   },
   {
     id: "3",
-    slug: "atlanta-executive-residence",
-    name: "Atlanta Executive Residence",
-    city: "Atlanta",
-    destination: "Georgia",
-    bedrooms: 3,
-    bathrooms: 2,
-    maxGuests: 6,
-    nightlyRate: 250,
-    description:
-      "Enjoy a relaxing stay in a sophisticated residence designed for business travellers, families and guests seeking a premium Atlanta experience.",
-    coverPhoto:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85",
-    gallery: [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=85",
-    ],
-    amenities: ["WiFi", "Parking", "Air Conditioning", "Coffee Maker"],
+    slug: "pinecrest-family-estate",
+    name: "Pinecrest Family Estate",
+    city: "Pinecrest",
+    destination: "Florida",
+    bedrooms: 5,
+    bathrooms: 6,
+    nightlyRate: 475,
+    description: "A spacious family estate featuring five bedrooms, six bathrooms and a confirmed swimming pool.",
+    coverPhoto: getPropertyImage(3),
+    gallery: [getPropertyImage(3)],
+    amenities: ["Swimming Pool"],
     featured: true,
     available: true,
   },
   {
     id: "4",
-    slug: "california-coastal-retreat",
-    name: "California Coastal Retreat",
-    city: "Los Angeles",
-    destination: "California",
-    bedrooms: 3,
-    bathrooms: 3,
-    maxGuests: 6,
-    nightlyRate: 420,
-    description:
-      "Discover coastal living in this inviting property with beautiful interiors, relaxing outdoor spaces and convenient access to local attractions.",
-    coverPhoto:
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=85",
-    gallery: [
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=85",
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=85",
-    ],
-    amenities: ["WiFi", "Swimming Pool", "Parking", "Air Conditioning"],
-    featured: true,
-    available: false,
+    slug: "downtown-fort-lauderdale-grand-home",
+    name: "Downtown Fort Lauderdale Grand Home",
+    city: "Fort Lauderdale",
+    destination: "Florida",
+    bedrooms: 7,
+    bathrooms: 9,
+    nightlyRate: 400,
+    description: "A grand seven-bedroom residence with generous living spaces for families and group stays.",
+    coverPhoto: getPropertyImage(4),
+    gallery: [getPropertyImage(4)],
+    amenities: [],
+    featured: false,
+    available: true,
   },
   {
     id: "5",
-    slug: "nashville-comfort-suites",
-    name: "Nashville Comfort Suites",
-    city: "Nashville",
-    destination: "Tennessee",
-    bedrooms: 1,
-    bathrooms: 1,
-    maxGuests: 2,
-    nightlyRate: 145,
-    description:
-      "A comfortable and stylish shortlet retreat featuring thoughtfully selected furnishings and everything you need for a peaceful stay.",
-    coverPhoto:
-      "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=85",
-    gallery: [
-      "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=85",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85",
-    ],
-    amenities: ["WiFi", "Coffee Maker", "Air Conditioning"],
+    slug: "los-angeles-signature-home",
+    name: "Los Angeles Signature Home",
+    city: "Los Angeles",
+    destination: "California",
+    bedrooms: 7,
+    bathrooms: 8,
+    nightlyRate: 450,
+    description: "A spacious signature residence in Los Angeles, designed for comfortable group and family stays.",
+    coverPhoto: getPropertyImage(5),
+    gallery: [getPropertyImage(5)],
+    amenities: [],
     featured: false,
     available: true,
   },
   {
     id: "6",
-    slug: "dallas-luxury-family-home",
-    name: "Dallas Luxury Family Home",
-    city: "Dallas",
+    slug: "miami-six-bedroom-residence",
+    name: "Miami Six-Bedroom Residence",
+    city: "Miami",
+    destination: "Florida",
+    bedrooms: 6,
+    bathrooms: 9,
+    nightlyRate: 550,
+    description: "An expansive Miami residence featuring six bedrooms and nine bathrooms.",
+    coverPhoto: getPropertyImage(6),
+    gallery: [getPropertyImage(6)],
+    amenities: [],
+    featured: true,
+    available: true,
+  },
+  {
+    id: "7",
+    slug: "miami-seven-bedroom-residence",
+    name: "Miami Seven-Bedroom Residence",
+    city: "Miami",
+    destination: "Florida",
+    bedrooms: 7,
+    bathrooms: 8.5,
+    nightlyRate: 455,
+    description: "A spacious seven-bedroom Miami home offering generous accommodation for larger groups.",
+    coverPhoto: getPropertyImage(7),
+    gallery: [getPropertyImage(7)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "8",
+    slug: "eado-houston-townhome",
+    name: "EaDo Houston Townhome",
+    city: "Houston",
     destination: "Texas",
     bedrooms: 4,
+    bathrooms: 4,
+    nightlyRate: 400,
+    description: "A four-bedroom Houston townhome with comfortable accommodation and spacious interiors.",
+    coverPhoto: getPropertyImage(8),
+    gallery: [getPropertyImage(8)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "9",
+    slug: "highlands-lohi-denver-home",
+    name: "Highlands / LoHi Denver Home",
+    city: "Denver",
+    destination: "Colorado",
+    bedrooms: 4,
+    bathrooms: 5,
+    nightlyRate: 385,
+    description: "A welcoming Denver home with four bedrooms and five bathrooms for a comfortable stay.",
+    coverPhoto: getPropertyImage(9),
+    gallery: [getPropertyImage(9)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "10",
+    slug: "summerhill-atlanta-home",
+    name: "Summerhill Atlanta Home",
+    city: "Atlanta",
+    destination: "Georgia",
+    bedrooms: 5,
+    bathrooms: 4,
+    nightlyRate: 400,
+    description: "A five-bedroom Atlanta residence offering comfortable spaces for families and groups.",
+    coverPhoto: getPropertyImage(10),
+    gallery: [getPropertyImage(10)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "11",
+    slug: "shadyside-pittsburgh-home",
+    name: "Shadyside Pittsburgh Home",
+    city: "Pittsburgh",
+    destination: "Pennsylvania",
+    bedrooms: 3,
+    bathrooms: 4,
+    nightlyRate: 350,
+    description: "A comfortable three-bedroom residence in Pittsburgh with four bathrooms.",
+    coverPhoto: getPropertyImage(11),
+    gallery: [getPropertyImage(11)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "12",
+    slug: "uptown-dallas-residence",
+    name: "Uptown Dallas Residence",
+    city: "Dallas",
+    destination: "Texas",
+    bedrooms: 3,
+    bathrooms: 3.5,
+    nightlyRate: 300,
+    description: "A contemporary Dallas residence with three bedrooms and thoughtfully arranged living spaces.",
+    coverPhoto: getPropertyImage(12),
+    gallery: [getPropertyImage(12)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "13",
+    slug: "san-francisco-signature-home",
+    name: "San Francisco Signature Home",
+    city: "San Francisco",
+    destination: "California",
+    bedrooms: 5,
+    bathrooms: 5.5,
+    nightlyRate: 600,
+    description: "A signature five-bedroom San Francisco residence offering spacious accommodation.",
+    coverPhoto: getPropertyImage(13),
+    gallery: [getPropertyImage(13)],
+    amenities: [],
+    featured: true,
+    available: true,
+  },
+  {
+    id: "14",
+    slug: "fort-lauderdale-four-bedroom-home",
+    name: "Fort Lauderdale Four-Bedroom Home",
+    city: "Fort Lauderdale",
+    destination: "Florida",
+    bedrooms: 4,
+    bathrooms: 6,
+    nightlyRate: 485,
+    description: "A spacious Fort Lauderdale home featuring four bedrooms and six bathrooms.",
+    coverPhoto: getPropertyImage(14),
+    gallery: [getPropertyImage(14)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "15",
+    slug: "miami-eight-bath-residence",
+    name: "Miami Eight-Bath Residence",
+    city: "Miami",
+    destination: "Florida",
+    bedrooms: 6,
+    bathrooms: 8,
+    nightlyRate: 505,
+    description: "An expansive six-bedroom Miami residence with eight bathrooms and generous accommodation.",
+    coverPhoto: getPropertyImage(15),
+    gallery: [getPropertyImage(15)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "16",
+    slug: "ottawa-signature-home",
+    name: "Ottawa Signature Home",
+    city: "Ottawa",
+    destination: "Ontario, Canada",
+    bedrooms: 5,
+    bathrooms: 5,
+    nightlyRate: 400,
+    description: "A spacious five-bedroom signature residence in Ottawa, suitable for families and groups.",
+    coverPhoto: getPropertyImage(16),
+    gallery: [getPropertyImage(16)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "17",
+    slug: "the-nashville-castle",
+    name: "The Nashville Castle",
+    city: "Nashville",
+    destination: "Tennessee",
+    bedrooms: null,
+    bathrooms: null,
+    nightlyRate: 1000,
+    description: "An exclusive Nashville property. Bedroom and bathroom details are awaiting confirmation.",
+    coverPhoto: getPropertyImage(17),
+    gallery: [getPropertyImage(17)],
+    amenities: [],
+    featured: true,
+    available: true,
+  },
+  {
+    id: "18",
+    slug: "austin-five-bedroom-home",
+    name: "Austin Five-Bedroom Home",
+    city: "Austin",
+    destination: "Texas",
+    bedrooms: 5,
+    bathrooms: 8,
+    nightlyRate: 850,
+    description: "A spacious Austin residence featuring five bedrooms and eight bathrooms.",
+    coverPhoto: getPropertyImage(18),
+    gallery: [getPropertyImage(18)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "19",
+    slug: "houston-signature-estate",
+    name: "Houston Signature Estate",
+    city: "Houston",
+    destination: "Texas",
+    bedrooms: 5,
+    bathrooms: 6,
+    nightlyRate: 1000,
+    description: "A premium Houston estate with five bedrooms and six bathrooms for an elevated stay.",
+    coverPhoto: getPropertyImage(19),
+    gallery: [getPropertyImage(19)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "20",
+    slug: "miami-beach-mansion",
+    name: "Miami Beach Mansion",
+    city: "Miami Beach",
+    destination: "Florida",
+    bedrooms: 6,
+    bathrooms: 11,
+    nightlyRate: 1350,
+    description: "An expansive Miami Beach mansion featuring six bedrooms and eleven bathrooms.",
+    coverPhoto: getPropertyImage(20),
+    gallery: [getPropertyImage(20)],
+    amenities: [],
+    featured: true,
+    available: true,
+  },
+  {
+    id: "21",
+    slug: "calgary-signature-home",
+    name: "Calgary Signature Home",
+    city: "Calgary",
+    destination: "Alberta, Canada",
+    bedrooms: 5,
+    bathrooms: 6,
+    nightlyRate: 450,
+    description: "A five-bedroom Calgary residence offering generous space for a comfortable stay.",
+    coverPhoto: getPropertyImage(21),
+    gallery: [getPropertyImage(21)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "22",
+    slug: "austin-three-bedroom-home",
+    name: "Austin Three-Bedroom Home",
+    city: "Austin",
+    destination: "Texas",
+    bedrooms: 3,
+    bathrooms: 5,
+    nightlyRate: 400,
+    description: "A comfortable Austin residence featuring three bedrooms and five bathrooms.",
+    coverPhoto: getPropertyImage(22),
+    gallery: [getPropertyImage(22)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "23",
+    slug: "hershey-signature-home",
+    name: "Hershey Signature Home",
+    city: "Hershey",
+    destination: "Pennsylvania",
+    bedrooms: 5,
+    bathrooms: 6,
+    nightlyRate: 400,
+    description: "A spacious signature residence in Hershey with five bedrooms and six bathrooms.",
+    coverPhoto: getPropertyImage(23),
+    gallery: [getPropertyImage(23)],
+    amenities: [],
+    featured: true,
+    available: true,
+  },
+  {
+    id: "24",
+    slug: "fort-lauderdale-five-bedroom-home",
+    name: "Fort Lauderdale Five-Bedroom Home",
+    city: "Fort Lauderdale",
+    destination: "Florida",
+    bedrooms: 5,
+    bathrooms: 6.5,
+    nightlyRate: 585,
+    description: "A generous five-bedroom Fort Lauderdale residence with six and a half bathrooms.",
+    coverPhoto: getPropertyImage(24),
+    gallery: [getPropertyImage(24)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "25",
+    slug: "houston-four-bedroom-home",
+    name: "Houston Four-Bedroom Home",
+    city: "Houston",
+    destination: "Texas",
+    bedrooms: 4,
+    bathrooms: 3.5,
+    nightlyRate: 350,
+    description: "A comfortable Houston home featuring four bedrooms and three and a half bathrooms.",
+    coverPhoto: getPropertyImage(25),
+    gallery: [getPropertyImage(25)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "26",
+    slug: "los-angeles-five-bedroom-home",
+    name: "Los Angeles Five-Bedroom Home",
+    city: "Los Angeles",
+    destination: "California",
+    bedrooms: 5,
+    bathrooms: 6,
+    nightlyRate: 405,
+    description: "A spacious Los Angeles residence featuring five bedrooms and six bathrooms.",
+    coverPhoto: getPropertyImage(26),
+    gallery: [getPropertyImage(26)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "27",
+    slug: "miami-eight-bedroom-residence",
+    name: "Miami Eight-Bedroom Residence",
+    city: "Miami",
+    destination: "Florida",
+    bedrooms: 8,
+    bathrooms: 9,
+    nightlyRate: 650,
+    description: "A large Miami residence with eight bedrooms and nine bathrooms, ideal for group stays.",
+    coverPhoto: getPropertyImage(27),
+    gallery: [getPropertyImage(27)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "28",
+    slug: "miami-five-bedroom-residence",
+    name: "Miami Five-Bedroom Residence",
+    city: "Miami",
+    destination: "Florida",
+    bedrooms: 5,
+    bathrooms: 6,
+    nightlyRate: 550,
+    description: "A spacious five-bedroom Miami residence with six bathrooms and comfortable living areas.",
+    coverPhoto: getPropertyImage(28),
+    gallery: [getPropertyImage(28)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "29",
+    slug: "fort-lauderdale-five-bedroom-retreat",
+    name: "Fort Lauderdale Five-Bedroom Retreat",
+    city: "Fort Lauderdale",
+    destination: "Florida",
+    bedrooms: 5,
+    bathrooms: 7,
+    nightlyRate: 507,
+    description: "A five-bedroom Fort Lauderdale retreat offering generous accommodation and living space.",
+    coverPhoto: getPropertyImage(29),
+    gallery: [getPropertyImage(29)],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+  {
+    id: "30",
+    slug: "charlotte-signature-home",
+    name: "Charlotte Signature Home",
+    city: "Charlotte",
+    destination: "North Carolina",
+    bedrooms: 4,
     bathrooms: 3,
-    maxGuests: 8,
-    nightlyRate: 295,
-    description:
-      "A spacious family-friendly home with beautiful living spaces, comfortable bedrooms and premium conveniences for short and extended stays.",
-    coverPhoto:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=85",
-    gallery: [
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=85",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=85",
-    ],
-    amenities: ["WiFi", "Parking", "Swimming Pool", "Air Conditioning"],
+    nightlyRate: 404,
+    description: "A comfortable Charlotte residence featuring four bedrooms and three bathrooms.",
+    coverPhoto: getPropertyImage(30),
+    gallery: [getPropertyImage(30)],
+    amenities: [],
     featured: false,
     available: true,
   },
@@ -232,7 +592,6 @@ function PropertyCard({ property }: { property: Property }) {
 
       {/* Property Image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-[#E9EFEA]">
-
         <Image
           src={property.coverPhoto}
           alt={property.name}
@@ -242,21 +601,18 @@ function PropertyCard({ property }: { property: Property }) {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
-        {/* Featured Badge */}
         {property.featured && (
           <span className="absolute left-4 top-4 z-10 rounded-md bg-[#C8A84C] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#173C2B] shadow-sm">
             Featured
           </span>
         )}
 
-        {/* Unavailable Badge */}
         {!property.available && (
           <span className="absolute left-4 top-4 z-10 rounded-md bg-[#303A34] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-sm">
             Unavailable
           </span>
         )}
 
-        {/* Price */}
         <div className="absolute bottom-4 right-4 z-10 rounded-lg bg-[#07563D] px-4 py-2 text-white shadow-lg">
           <span className="text-[16px] font-bold">
             ${property.nightlyRate.toLocaleString("en-US")}
@@ -266,7 +622,6 @@ function PropertyCard({ property }: { property: Property }) {
           </span>
         </div>
 
-        {/* Unavailable overlay */}
         {!property.available && (
           <div className="absolute inset-0 bg-black/15" />
         )}
@@ -275,7 +630,6 @@ function PropertyCard({ property }: { property: Property }) {
       {/* Property Information */}
       <div className="p-5 sm:p-6">
 
-        {/* Location */}
         <div className="mb-3 flex items-center gap-1.5">
           <MapPin size={14} className="text-[#C8A84C]" />
           <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#B18D37]">
@@ -283,12 +637,10 @@ function PropertyCard({ property }: { property: Property }) {
           </span>
         </div>
 
-        {/* Name */}
         <h2 className="mb-2 font-serif text-[22px] font-semibold leading-tight text-[#193B2C] sm:text-[24px]">
           {property.name}
         </h2>
 
-        {/* Description */}
         <p className="mb-5 line-clamp-2 min-h-[48px] text-[14px] leading-6 text-[#758178]">
           {property.description}
         </p>
@@ -298,18 +650,24 @@ function PropertyCard({ property }: { property: Property }) {
 
           <div className="flex items-center gap-1.5">
             <BedDouble size={17} className="text-[#A58A43]" />
-            <span>{property.bedrooms} Beds</span>
+            <span>
+              {property.bedrooms ?? "TBC"} Beds
+            </span>
           </div>
 
           <div className="flex items-center gap-1.5">
             <Bath size={17} className="text-[#A58A43]" />
-            <span>{property.bathrooms} Baths</span>
+            <span>
+              {property.bathrooms ?? "TBC"} Baths
+            </span>
           </div>
 
-          <div className="flex items-center gap-1.5">
-            <Users size={17} className="text-[#A58A43]" />
-            <span>{property.maxGuests} Guests</span>
-          </div>
+          {property.maxGuests != null && (
+            <div className="flex items-center gap-1.5">
+              <Users size={17} className="text-[#A58A43]" />
+              <span>{property.maxGuests} Guests</span>
+            </div>
+          )}
 
         </div>
 
@@ -330,7 +688,7 @@ function PropertyCard({ property }: { property: Property }) {
         <div className="mt-3 grid grid-cols-2 gap-3">
 
           <Link
-            href={`/propertypage/${property.slug}`}
+            href={`/property-page/${property.slug}`}
             className="flex h-[46px] items-center justify-center gap-2 rounded-lg border border-[#07563D] text-[13px] font-semibold text-[#07563D] transition-all duration-200 hover:bg-[#F0F6F1] sm:text-[14px]"
           >
             View details
@@ -346,7 +704,6 @@ function PropertyCard({ property }: { property: Property }) {
           </Link>
 
         </div>
-
       </div>
     </article>
   );
@@ -357,8 +714,6 @@ function PropertyCard({ property }: { property: Property }) {
 // ============================================
 
 export default function PropertiesPage() {
-
-  // Properties and loading states
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -378,10 +733,7 @@ export default function PropertiesPage() {
     setError(false);
 
     try {
-      // Simulated loading for this frontend demo.
-      // Replace with your API request when backend is connected.
       await new Promise((resolve) => setTimeout(resolve, 700));
-
       setProperties(PROPERTY_DATA);
     } catch {
       setError(true);
@@ -396,7 +748,6 @@ export default function PropertiesPage() {
 
   // ==========================================
   // READ DESTINATION FROM URL
-  // Example: /propertypage?destination=Miami
   // ==========================================
 
   useEffect(() => {
@@ -425,7 +776,6 @@ export default function PropertiesPage() {
   const filteredProperties = useMemo(() => {
     let result = [...properties];
 
-    // Search by name or city
     if (search.trim()) {
       const query = search.toLowerCase().trim();
 
@@ -436,7 +786,6 @@ export default function PropertiesPage() {
       );
     }
 
-    // Destination filter
     if (destination !== "All destinations") {
       result = result.filter(
         (property) =>
@@ -445,16 +794,16 @@ export default function PropertiesPage() {
       );
     }
 
-    // Bedrooms filter
     if (bedrooms !== "Any") {
       const minimum = Number(bedrooms);
 
       result = result.filter(
-        (property) => property.bedrooms >= minimum
+        (property) =>
+          property.bedrooms !== null &&
+          property.bedrooms >= minimum
       );
     }
 
-    // Sorting
     if (sort === "recommended") {
       result.sort(
         (a, b) => Number(b.featured) - Number(a.featured)
@@ -520,50 +869,35 @@ export default function PropertiesPage() {
   return (
     <main className="min-h-screen bg-[#F8FAF8]">
 
-      {/* ====================================
-          HERO BANNER
-      ==================================== */}
-
+      {/* HERO BANNER */}
       <section className="relative overflow-hidden border-b border-[#E1EAE2] bg-[#EAF3EC]">
-
-        {/* Decorative background */}
         <div className="pointer-events-none absolute -right-24 -top-32 h-[350px] w-[350px] rounded-full border-[45px] border-[#07563D]/[0.035]" />
 
         <div className="relative mx-auto max-w-[1440px] px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
-
           <div className="max-w-[760px]">
 
-            {/* Eyebrow */}
             <div className="mb-5 flex items-center gap-3">
               <span className="h-[2px] w-8 bg-[#C8A84C]" />
-
               <span className="text-[12px] font-bold uppercase tracking-[0.24em] text-[#9B7C32]">
                 Our Properties
               </span>
             </div>
 
-            {/* Headline */}
             <h1 className="font-serif text-[42px] font-medium leading-[1.12] tracking-[-1.5px] text-[#173C2B] sm:text-[54px] lg:text-[64px]">
               Homes for every occasion
             </h1>
 
-            {/* Subtitle */}
             <p className="mt-6 max-w-[660px] text-[15px] leading-[1.9] text-[#65766B] sm:text-[17px]">
               Browse our managed shortlet homes. Rates are in USD;
               send an inquiry to check availability for your dates.
             </p>
 
           </div>
-
         </div>
       </section>
 
-      {/* ====================================
-          FILTER BAR
-      ==================================== */}
-
+      {/* FILTER BAR */}
       <section className="relative z-20 mx-auto -mt-2 max-w-[1440px] px-6 pt-8 sm:px-10 lg:px-16">
-
         <div className="rounded-2xl border border-[#E5EBE5] bg-white p-4 shadow-[0_10px_35px_rgba(15,45,30,0.06)] sm:p-6">
 
           <div className="mb-5 flex items-center justify-between">
@@ -708,15 +1042,11 @@ export default function PropertiesPage() {
         </div>
       </section>
 
-      {/* ====================================
-          PROPERTY GRID
-      ==================================== */}
-
+      {/* PROPERTY GRID */}
       <section className="mx-auto max-w-[1440px] px-6 pb-24 pt-14 sm:px-10 lg:px-16 lg:pt-16">
 
         {/* Results Header */}
         <div className="mb-8 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-
           <div>
             <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-[#A8893F]">
               Discover your next stay
@@ -736,7 +1066,6 @@ export default function PropertiesPage() {
               of {properties.length} properties
             </p>
           )}
-
         </div>
 
         {/* Loading State */}
@@ -770,7 +1099,6 @@ export default function PropertiesPage() {
             >
               Try again
             </button>
-
           </div>
         )}
 
@@ -797,7 +1125,6 @@ export default function PropertiesPage() {
             >
               Clear all filters
             </button>
-
           </div>
         )}
 
@@ -814,7 +1141,6 @@ export default function PropertiesPage() {
         )}
 
       </section>
-
     </main>
   );
 }

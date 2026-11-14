@@ -114,59 +114,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact column */}
-          <div>
-            <h3 className="mb-7 text-[14px] font-bold uppercase tracking-[0.13em] text-[#C8A84C]">
-              Contact
-            </h3>
-
-            <div className="space-y-6">
-
-              {/* Email */}
-              <a
-                href="mailto:hello@constabamshortlet.com"
-                className="block break-words text-[15px] text-[#D2DED7] transition-colors hover:text-[#D9B94F] sm:text-[17px]"
-              >
-                hello@constabamshortlet.com
-              </a>
-
-              {/* Phone */}
-              <a
-                href="tel:+18325550148"
-                className="flex items-center gap-3 text-[16px] text-[#D2DED7] transition-colors hover:text-[#D9B94F] sm:text-[17px]"
-              >
-                <Phone
-                  size={21}
-                  strokeWidth={1.8}
-                  className="shrink-0"
-                />
-
-                <span>(832) 555-0148</span>
-              </a>
-
-              {/* Address */}
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=1200+McKinney+St+Houston+TX+77010"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 text-[16px] leading-[1.55] text-[#D2DED7] transition-colors hover:text-[#D9B94F] sm:text-[17px]"
-              >
-                <MapPin
-                  size={19}
-                  strokeWidth={1.8}
-                  className="mt-1 shrink-0"
-                />
-
-                <span>
-                  1200 McKinney St,
-                  <br />
-                  Houston, TX 77010
-                </span>
-              </a>
-
-            </div>
-          </div>
-
         </div>
 
       </div>
