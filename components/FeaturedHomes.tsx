@@ -1,284 +1,163 @@
 
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import {
-  MapPin,
+  ArrowUpRight,
   BedDouble,
   Bath,
-  Users,
-  ArrowUpRight,
+  MapPin,
 } from "lucide-react";
 
-const properties = [
-  {
-    id: 1,
-    pageUrl: "/property-page/pinecrest",
-    name: "Pinecrest Family Estate ",
-    location: "PINECREST, FLORIDA",
-    description:
-      "A professionally managed vacation rental in Pinecrest, Florida, offering 5 bedrooms and 6 bathrooms.",
-    price: 475,
-    bedrooms: 5,
-    bathrooms: 6,
-    guests: 6,
-    featured: true,
-    image: "/images/picture/IMG_3.jpg",
-  },
-  {
-    id: 2,
-    pageUrl: "/property-page/miami",
-    name: "Miami Six-Bedroom Residence",
-    location: "MIAMI, FLORIDA",
-    description:
-      "Elegant high-rise suite with sweeping lagoon views, gym and pool access.",
-    price: 550,
-    bedrooms: 6,
-    bathrooms: 2,
-    guests: 4,
-    featured: true,
-    image: "/images/picture/IMG_6.jpg",
-  },
-  {
-    id: 3,
-    pageUrl: "/property-page/san-francisco",
-    name: "San Francisco Signature Home",
-    location: "SAN FRANSICO, CALIFONIA",
-    description:
-      "A professionally managed vacation rental in San Francisco, California, offering 5 bedrooms and 5.5 bathrooms",
-    price: 600,
-    bedrooms: 5,
-    bathrooms: 5.5,
-    guests: 8,
-    featured: true,
-    image: "/images/picture/IMG_13.jpg",
-  },
-  {
-    id: 4,
-    pageUrl: "/property-page/nashville",
-    name: "The Nashville Castle",
-    location: "NASHVILLE, TEENESEE",
-    description:
-      "A professionally managed vacation rental in Nashville, Tennessee, offering room counts to be confirmed. Managed by ISABELLASIGNATUREHOMES — browse the gallery and send an inquiry to check availability for your dates.",
-    price: 1000,
-    bedrooms: 5,
-    bathrooms: 6,
-    guests: 4,
-    featured: false,
-    image: "/images/picture/IMG_16.jpg",
-  },
-  {
-    id: 5,
-    pageUrl: "/property-page/hershey",
-    name: "Hershey Signature Home",
-    location: "HERSHEY, PENNSYLVANIA",
-    description:
-      "Spacious luxury accommodation designed for families, extended stays and business travelers.",
-    price: 400,
-    bedrooms: 6,
-    bathrooms: 6,
-    guests: 6,
-    featured: true,
-    image: "/images/picture/IMG_22.jpg",
-  },
-  {
-    id: 6,
-    pageUrl: "/property-page/Miami-Beach-Mansion",
-    name: "Miami Beach Mansion",
-    location: "MIAMI BEACH, FLORIDA",
-    description:
-      "A professionally managed vacation rental in Miami Beach, Florida, offering 6 bedrooms and 11 bathrooms.",
-    price: 1350,
-    bedrooms: 6,
-    bathrooms: 11,
-    guests: 6,
-    featured: false,
-    image: "/images/picture/IMG_19.jpg",
-  },
-];
-
-function PropertyCard({
-  property,
-}: {
-  property: (typeof properties)[number];
-}) {
-  return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-[27px] border border-[#E5E9E5] bg-white shadow-[0_3px_12px_rgba(22,52,35,0.10)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(22,52,35,0.13)]">
-
-      {/* Property image */}
-      <Link
-        href={property.pageUrl}
-        className="relative block h-[235px] w-full overflow-hidden sm:h-[255px]"
-      >
-        <Image
-          src={property.image}
-          alt={property.name}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-
-        {/* Featured badge */}
-        {property.featured && (
-          <span className="absolute left-4 top-4 z-10 rounded-full bg-[#D5A51E] px-5 py-2 text-[13px] font-semibold text-[#30250B] shadow-md">
-            Featured
-          </span>
-        )}
-
-        {/* Price badge */}
-        <div className="absolute bottom-4 right-4 z-10 rounded-full bg-[#07583F] px-4 py-2 text-white shadow-lg">
-          <span className="text-lg font-semibold">
-            ${property.price}
-          </span>
-          <span className="ml-1 text-sm text-white/80">
-            / night
-          </span>
-        </div>
-      </Link>
-
-      {/* Property information */}
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-
-        {/* Location */}
-        <div className="mb-4 flex items-center gap-2">
-          <MapPin
-            size={17}
-            strokeWidth={2.5}
-            className="shrink-0 text-[#C2A34E]"
-          />
-
-          <span className="text-[12px] font-semibold tracking-[0.11em] text-[#B99C4D] sm:text-[13px]">
-            {property.location}
-          </span>
-        </div>
-
-        {/* Property name */}
-        <h3 className="font-[family-name:var(--font-display)] text-[24px] font-medium leading-tight text-[#171815] sm:text-[27px]">
-          {property.name}
-        </h3>
-
-        {/* Description */}
-        <p className="mt-4 line-clamp-2 min-h-[55px] text-[14px] leading-[1.65] text-[#737A75] sm:text-[15px]">
-          {property.description}
-        </p>
-
-        {/* Divider */}
-        <div className="my-5 h-px w-full bg-[#E0E5E1]" />
-
-        {/* Property features */}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-3 text-[#727873]">
-
-          <div className="flex items-center gap-1.5">
-            <BedDouble size={19} className="text-[#BEA24E]" />
-            <span className="text-[14px]">
-              {property.bedrooms} bd
-            </span>
-          </div>
-
-          <div className="flex items-center gap-1.5">
-            <Bath size={19} className="text-[#BEA24E]" />
-            <span className="text-[14px]">
-              {property.bathrooms} ba
-            </span>
-          </div>
-
-          <div className="flex items-center gap-1.5">
-            <Users size={19} className="text-[#BEA24E]" />
-            <span className="text-[14px]">
-              {property.guests} guests
-            </span>
-          </div>
-
-        </div>
-
-        {/* Action buttons */}
-        <div className="mt-auto flex gap-3 pt-7">
-
-          <Link
-            href={property.pageUrl}
-            className="flex min-h-[50px] flex-1 items-center justify-center gap-1 rounded-full border border-[#D9E1DB] bg-white px-3 text-center text-[13px] font-medium text-[#252925] shadow-[0_3px_9px_rgba(0,0,0,0.09)] transition-all hover:border-[#07583F] hover:bg-[#F2F7F3] sm:text-[14px]"
-          >
-            View details
-            <ArrowUpRight size={15} />
-          </Link>
-
-          <Link
-            href={`/inquires?propertyId=${property.id}`}
-            className="flex min-h-[50px] flex-1 items-center justify-center rounded-full bg-[#07583F] px-3 text-center text-[13px] font-medium text-white shadow-[0_4px_12px_rgba(7,88,63,0.18)] transition-all hover:bg-[#06452F] sm:text-[14px]"
-          >
-            Inquire
-          </Link>
-
-        </div>
-      </div>
-    </article>
-  );
-}
+import { getFeaturedProperties } from "@/lib/properties";
 
 export default function FeaturedHomes() {
+  const properties = getFeaturedProperties();
+
   return (
-    <section
-      id="featured-homes"
-      className="relative overflow-hidden bg-[#FCFDFC] px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28"
-    >
-      <div className="mx-auto max-w-[1240px]">
+    <section className="bg-[#F8FAF8] px-6 py-20 sm:px-10 lg:px-16 lg:py-24">
+      <div className="mx-auto max-w-[1440px]">
 
-        {/* Section heading */}
-        <div className="mb-10 flex flex-col justify-between gap-4 sm:mb-12 sm:flex-row sm:items-end">
-          <div>
-            <p className="mb-3 text-[11px] font-bold tracking-[0.22em] text-[#B99C4D]">
-              DISCOVER YOUR NEXT STAY
-            </p>
+        {/* Section Heading */}
+        <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div className="max-w-[650px]">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-[2px] w-8 bg-[#C8A84C]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#A8893F]">
+                Carefully selected stays
+              </span>
+            </div>
 
-            <h2 className="font-[family-name:var(--font-display)] text-[36px] font-medium leading-tight tracking-[-0.025em] text-[#171815] sm:text-[46px]">
+            <h2 className="font-serif text-[34px] font-semibold leading-tight text-[#173C2B] sm:text-[42px]">
               Featured homes
             </h2>
 
-            <p className="mt-3 max-w-xl text-[14px] leading-7 text-[#737A75] sm:text-[15px]">
-              Explore a selection of thoughtfully managed homes,
-              designed to make every stay comfortable and memorable.
+            <p className="mt-4 max-w-[580px] text-[14px] leading-7 text-[#758178] sm:text-[15px]">
+              Explore a selection of our featured residences,
+              chosen for guests seeking comfort, space and
+              memorable stays.
             </p>
           </div>
 
           <Link
             href="/properties"
-            className="hidden items-center gap-2 text-sm font-semibold text-[#07583F] transition-colors hover:text-[#B99C4D] sm:inline-flex"
+            className="inline-flex h-[48px] shrink-0 items-center justify-center gap-2 rounded-lg border border-[#07563D] px-6 text-[13px] font-semibold text-[#07563D] transition-all hover:bg-[#07563D] hover:text-white"
           >
             Explore all homes
-            <ArrowUpRight size={17} />
+            <ArrowUpRight size={16} />
           </Link>
         </div>
 
-        {/* Six property listings */}
-        <div className="grid grid-cols-1 items-stretch gap-7 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {properties.map((property) => (
-            <PropertyCard
-              key={property.id}
-              property={property}
-            />
-          ))}
-        </div>
+        {/* Featured Property Grid */}
+        {properties.length > 0 ? (
+          <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+            {properties.map((property) => (
+              <article
+                key={property.id}
+                className="group overflow-hidden rounded-2xl border border-[#E7EAE5] bg-white shadow-[0_4px_20px_rgba(15,45,30,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C8A84C] hover:shadow-[0_15px_35px_rgba(15,45,30,0.10)]"
+              >
+                {/* Image */}
+                <Link
+                  href={`/property-page/${property.slug}`}
+                  className="relative block aspect-[4/3] overflow-hidden bg-[#E9EFEA]"
+                >
+                  <Image
+                    src={property.coverPhoto}
+                    alt={property.name}
+                    fill
+                    unoptimized
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
 
-        {/* More properties button */}
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 text-center sm:mt-16">
+                  <span className="absolute left-4 top-4 rounded-md bg-[#C8A84C] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#173C2B] shadow-sm">
+                    Featured
+                  </span>
 
-          <p className="text-sm text-[#737A75]">
-            Looking for more options? Explore our complete collection of homes.
-          </p>
+                  <div className="absolute bottom-4 right-4 rounded-lg bg-[#07563D] px-4 py-2 text-white shadow-lg">
+                    <span className="text-[16px] font-bold">
+                      ${property.nightlyRate.toLocaleString("en-US")}
+                    </span>
+                    <span className="ml-1 text-[11px] text-white/80">
+                      / night
+                    </span>
+                  </div>
+                </Link>
 
-          <Link
-            href="/properties"
-            className="group inline-flex min-h-[54px] items-center justify-center gap-3 rounded-full bg-[#07583F] px-9 py-4 text-sm font-semibold text-white shadow-[0_5px_16px_rgba(7,88,63,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#06452F] hover:shadow-lg"
-          >
-            More Properties
+                {/* Property Information */}
+                <div className="p-5 sm:p-6">
+                  <div className="mb-3 flex items-center gap-1.5">
+                    <MapPin
+                      size={14}
+                      className="text-[#C8A84C]"
+                    />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#A8893F]">
+                      {property.city}, {property.destination}
+                    </span>
+                  </div>
 
-            <ArrowUpRight
-              size={18}
-              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-            />
-          </Link>
-        </div>
+                  <h3 className="mb-2 font-serif text-[22px] font-semibold leading-tight text-[#193B2C]">
+                    {property.name}
+                  </h3>
+
+                  <p className="mb-5 line-clamp-2 min-h-[48px] text-[13px] leading-6 text-[#758178]">
+                    {property.description}
+                  </p>
+
+                  {/* Property Details */}
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-3 border-y border-[#EDF0EC] py-4 text-[13px] text-[#58675D]">
+                    <div className="flex items-center gap-1.5">
+                      <BedDouble
+                        size={17}
+                        className="text-[#A58A43]"
+                      />
+                      <span>
+                        {property.bedrooms ?? "TBC"} Beds
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-1.5">
+                      <Bath
+                        size={17}
+                        className="text-[#A58A43]"
+                      />
+                      <span>
+                        {property.bathrooms ?? "TBC"} Baths
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="mt-5 grid grid-cols-2 gap-3">
+                    <Link
+                      href={`/property-page/${property.slug}`}
+                      className="flex h-[45px] items-center justify-center gap-2 rounded-lg border border-[#07563D] text-[12px] font-semibold text-[#07563D] transition-colors hover:bg-[#F0F6F1] sm:text-[13px]"
+                    >
+                      View details
+                      <ArrowUpRight size={15} />
+                    </Link>
+
+                    <Link
+                      href="/inquires"
+                      className="flex h-[45px] items-center justify-center gap-2 rounded-lg bg-[#07563D] text-[12px] font-semibold text-white transition-colors hover:bg-[#06442F] sm:text-[13px]"
+                    >
+                      Inquire
+                      <ArrowUpRight size={15} />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-2xl border border-[#E5EBE5] bg-white px-6 py-16 text-center">
+            <h3 className="font-serif text-xl font-semibold text-[#193B2C]">
+              Featured homes coming soon
+            </h3>
+            <p className="mt-2 text-sm text-[#758178]">
+              We are preparing our featured properties.
+            </p>
+          </div>
+        )}
 
       </div>
     </section>
