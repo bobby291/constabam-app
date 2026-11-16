@@ -23,7 +23,6 @@ const destinations = [
   { label: "Tennessee", href: "/destinations/tennessee" },
 ];
 
-// Static year prevents prerendering errors.
 const currentYear = 2026;
 
 export default function Footer() {
@@ -41,23 +40,25 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="Constabam Shortlet homepage"
-              className="mb-7 inline-flex items-center gap-4"
+              className="group mb-7 inline-flex items-center gap-3"
             >
 
-              {/* Logo mark */}
-              <div className="flex h-[76px] w-[76px] shrink-0 items-center justify-center rounded-[17px] border-[3px] border-[#C6A43E] shadow-[0_0_0_1px_rgba(198,164,62,0.15)]">
-                <span className="font-serif text-[39px] font-medium text-[#D1AF4A]">
-                  C
-                </span>
+              {/* Logo image - matching Navbar */}
+              <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center overflow-hidden rounded-[13px] border border-[#E8EDE9] bg-white shadow-[0_2px_5px_rgba(0,0,0,0.10)] transition-transform duration-300 group-hover:scale-105">
+                <img
+                  src="/logo.png"
+                  alt="Constabam Shortlet logo"
+                  className="h-full w-full object-contain"
+                />
               </div>
 
-              {/* Brand name */}
+              {/* Brand name - matching Navbar */}
               <div className="flex flex-col">
-                <span className="font-serif text-[29px] leading-tight tracking-[-0.04em] text-[#F5F2E8]">
+                <span className="font-[family-name:var(--font-display)] text-[23px] font-medium leading-none tracking-[-0.035em] text-[#F5F2E8] sm:text-[25px]">
                   Constabam
                 </span>
 
-                <span className="mt-1 text-[13px] font-medium uppercase tracking-[0.34em] text-[#C8A84C]">
+                <span className="mt-[6px] text-[10px] font-semibold uppercase tracking-[0.34em] text-[#B99A40]">
                   SHORTLET
                 </span>
               </div>
