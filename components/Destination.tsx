@@ -28,21 +28,11 @@ type Destination = {
 
 const DESTINATIONS: Destination[] = [
   {
-    name: "Florida",
-    areas: "Miami · Fort Lauderdale · Miami Beach · Pinecrest",
-    homes: 13,
-    startingPrice: 250,
-    image: "/images/picture/IMG_5.jpg",
-    imageAlt:
-      "Miami beachfront with turquoise ocean water and beautiful coastal homes",
-    featured: true,
-  },
-  {
     name: "Texas",
     areas: "Houston · Austin · Dallas",
     homes: 6,
     startingPrice: 300,
-    image: "/images/picture/IMG_7.jpg",
+    image: "/images/picture/IMG_17.jpg",
     imageAlt:
       "Houston skyline with modern skyscrapers and city lights",
     tall: true,
@@ -52,7 +42,7 @@ const DESTINATIONS: Destination[] = [
     areas: "Los Angeles · San Francisco",
     homes: 3,
     startingPrice: 405,
-    image: "/images/picture/IMG_8.jpg",
+    image: "/images/picture/IMG_13.jpg",
     imageAlt:
       "Los Angeles hillside home overlooking the city",
     tall: true,
@@ -62,52 +52,34 @@ const DESTINATIONS: Destination[] = [
     areas: "Pittsburgh · Hershey",
     homes: 2,
     startingPrice: 350,
-    image: "/images/picture/IMG_9.jpg",
+    image: "/images/picture/IMG_11.jpg",
     imageAlt:
       "A picturesque Pennsylvania town with charming homes and green surroundings",
-  },
-  {
-    name: "Canada",
-    areas: "Ottawa · Calgary",
-    homes: 2,
-    startingPrice: 400,
-    image: "/images/picture/IMG_10.jpg",
-    imageAlt:
-      "Canadian mountain landscape with beautiful homes and the Rocky Mountains",
   },
   {
     name: "Tennessee",
     areas: "Nashville",
     homes: 1,
     startingPrice: 1000,
-    image: "/images/picture/IMG_11.jpg",
+    image: "/images/picture/IMG_16.jpg",
     imageAlt:
       "Nashville skyline at night with illuminated buildings",
   },
   {
-    name: "Atlanta",
-    areas: "Atlanta, Georgia",
-    homes: 1,
-    startingPrice: 400,
-    image: "/images/picture/IMG_12.jpg",
+    name: "Florida",
+    areas: "Miami · Fort Lauderdale · Miami Beach · Pinecrest",
+    homes: 13,
+    startingPrice: 250,
+    image: "/images/picture/IMG_14.jpg",
     imageAlt:
-      "Atlanta skyline with modern skyscrapers and urban surroundings",
-  },
-  {
-    name: "Denver",
-    areas: "Denver, Colorado",
-    homes: 1,
-    startingPrice: 385,
-    image: "/images/picture/IMG_25.jpg",
-    imageAlt:
-      "Denver city skyline with the Rocky Mountains in the background",
+      "Miami beachfront with turquoise ocean water and beautiful coastal homes",
   },
   {
     name: "North Carolina",
     areas: "Charlotte",
     homes: 1,
     startingPrice: 404,
-    image: "/images/picture/IMG_26.jpg",
+    image: "/images/picture/IMG_29.jpg",
     imageAlt:
       "Charlotte skyline with modern buildings and an attractive city landscape",
   },
