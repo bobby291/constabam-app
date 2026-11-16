@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -10,7 +9,6 @@ import {
   Clock,
   ArrowRight,
   ArrowUpRight,
-  MessageCircle,
   Send,
   CheckCircle2,
   House,
@@ -22,7 +20,7 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email us",
-    value: "hello@constabamshortlet.com",
+    value: "constabamshortlet@gmail.com",
     description: "Send us your questions and booking requests.",
     href: "mailto:hello@constabamshortlet.com",
     action: "Send an email",
@@ -30,19 +28,12 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Call us",
-    value: "(832) 555-0148",
+    value: "(646) 694-0218",
     description: "Speak with our reservations team.",
     href: "tel:+18325550148",
     action: "Call our team",
   },
-  {
-    icon: MapPin,
-    label: "Our address",
-    value: "1200 McKinney St, Houston, TX 77010",
-    description: "Houston, Texas, United States.",
-    href: "https://www.google.com/maps/search/?api=1&query=1200+McKinney+St%2C+Houston%2C+TX+77010",
-    action: "View location",
-  },
+  
 ];
 
 const reasons = [
@@ -100,7 +91,7 @@ export default function ContactPage() {
         `Message:\n${formData.message}`
     );
 
-    window.location.href = `mailto:hello@constabamshortlet.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:constabamshortlet@gmail.com?subject=${subject}&body=${body}`;
 
     setSubmitted(true);
   };
@@ -155,8 +146,8 @@ export default function ContactPage() {
             return (
               <div
                 key={detail.label}
-                className="group rounded-2xl border border-[#E4EAE4] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#C8A84C]/60 hover:shadow-lg"
-              >
+            className="group rounded-2xl border border-[#E4EAE4] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#C8A84C]/60 hover:shadow-lg"
+          >
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#EAF3EC] text-[#B89436] transition group-hover:bg-[#07563D] group-hover:text-[#D9B94F]">
                   <Icon size={25} strokeWidth={1.7} />
                 </div>

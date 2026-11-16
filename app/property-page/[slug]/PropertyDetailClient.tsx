@@ -615,13 +615,12 @@ export default function PropertyDetailClient({
               )}
 
               {/* Inquiry actions */}
-              <button
-                type="button"
-                onClick={openInquiry}
-                className="mt-6 flex w-full items-center justify-center rounded-full bg-[#123C2D] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-[#07563D]"
-              >
-                Send Inquiry
-              </button>
+              <Link
+            href="/inquires"
+            className="flex flex-1 items-center justify-center rounded-full bg-[#123C2D] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#07563D]"
+          >
+            Send Inquiry
+          </Link>
 
               <Link
                 href="/contact"
@@ -757,13 +756,12 @@ export default function PropertyDetailClient({
                 </div>
               )}
 
-              <button
-                type="button"
-                onClick={openInquiry}
-                className="mt-5 flex w-full items-center justify-center rounded-full bg-[#123C2D] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-[#07563D]"
-              >
-                Send Inquiry
-              </button>
+              <Link
+            href="/inquires"
+            className="flex flex-1 items-center justify-center rounded-full bg-[#123C2D] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#07563D]"
+          >
+            Send Inquiry
+          </Link>
 
               <Link
                 href="/contact"
@@ -793,13 +791,12 @@ export default function PropertyDetailClient({
             <p className="text-xs text-gray-500">per night</p>
           </div>
 
-          <button
-            type="button"
-            onClick={openInquiry}
+          <Link
+            href="/inquires"
             className="flex flex-1 items-center justify-center rounded-full bg-[#123C2D] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#07563D]"
           >
             Send Inquiry
-          </button>
+          </Link>
         </div>
       </div>
 
