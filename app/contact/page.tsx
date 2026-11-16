@@ -20,17 +20,17 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email us",
-    value: "constabamshortlet@gmail.com",
+    value: "constabamshortlets@gmail.com",
     description: "Send us your questions and booking requests.",
-    href: "mailto:hello@constabamshortlet.com",
+    href: "mailto:constabamshortlets@gmail.com",
     action: "Send an email",
   },
   {
     icon: Phone,
     label: "Call us",
-    value: "(646) 694-0218",
+    value: "+1 (646) 694-0218",
     description: "Speak with our reservations team.",
-    href: "tel:+18325550148",
+    href: "tel:+16466940218",
     action: "Call our team",
   },
   
@@ -91,7 +91,7 @@ export default function ContactPage() {
         `Message:\n${formData.message}`
     );
 
-    window.location.href = `mailto:constabamshortlet@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:constabamshortlets@gmail.com?subject=${subject}&body=${body}`;
 
     setSubmitted(true);
   };
@@ -240,10 +240,10 @@ export default function ContactPage() {
                 <p className="mt-1 text-sm leading-7 text-[#68766D]">
                   Call us at{" "}
                   <a
-                    href="tel:+18325550148"
+                    href="tel:+16466940218"
                     className="font-semibold text-[#07563D] hover:text-[#B89436]"
                   >
-                    (832) 555-0148
+                    +1 (646) 694-0218
                   </a>{" "}
                   for assistance.
                 </p>
