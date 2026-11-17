@@ -50,6 +50,7 @@ export const inquirySchema = z
       "E-Transfer",
       "Skrill",
       "Bank Wire Transfer",
+      "Zelle",
     ]),
 
     message: z.string().max(5000),
