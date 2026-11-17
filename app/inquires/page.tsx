@@ -61,6 +61,7 @@ const paymentMethods = [
   "Apple Pay",
   "USDT",
   "PayPal",
+  "Zelle",
   "ETH",
   "OnePay",
   "E-Transfer",
