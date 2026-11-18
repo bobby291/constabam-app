@@ -20,9 +20,9 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email us",
-    value: "constabamshortlets@gmail.com",
+    value: "info@constabamshortlets.com",
     description: "Send us your questions and booking requests.",
-    href: "mailto:constabamshortlets@gmail.com",
+    href: "mailto:info@constabamshortlets.com",
     action: "Send an email",
   },
   {
@@ -91,7 +91,7 @@ export default function ContactPage() {
         `Message:\n${formData.message}`
     );
 
-    window.location.href = `mailto:constabamshortlets@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@constabamshortlets.com?subject=${subject}&body=${body}`;
 
     setSubmitted(true);
   };
