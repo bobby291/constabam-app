@@ -1535,34 +1535,107 @@ export const PROPERTY_DATA: Property[] = [
     featured: false,
     available: true,
   },
+
+  {
+    id: "31",
+    slug: "atlanta-ga",
+    name: "Atlanta GA Property",
+    city: "Atlanta",
+    destination: "Atlanta",
+    bedrooms: 5,
+    bathrooms: 7,
+    nightlyRate: 700,
+    description:
+      "A comfortable Atlanta residence featuring five bedrooms and seven bathrooms.",
+    coverPhoto: "/images/picture/IMG_32.jpeg",
+    gallery: [
+  "/images/properties/atlanta-ga/IMG_2205.jpeg",
+  "/images/properties/atlanta-ga/IMG_2206.jpeg",
+  "/images/properties/atlanta-ga/IMG_2207.jpeg",
+  "/images/properties/atlanta-ga/IMG_2208.jpeg",
+  "/images/properties/atlanta-ga/IMG_2209.jpeg",
+  "/images/properties/atlanta-ga/IMG_2210.jpeg",
+  "/images/properties/atlanta-ga/IMG_2211.jpeg",
+  "/images/properties/atlanta-ga/IMG_2212.jpeg",
+  "/images/properties/atlanta-ga/IMG_2213.jpeg",
+  "/images/properties/atlanta-ga/IMG_2214.jpeg",
+  "/images/properties/atlanta-ga/IMG_2215.jpeg",
+  "/images/properties/atlanta-ga/IMG_2216.jpeg",
+  "/images/properties/atlanta-ga/IMG_2217.jpeg",
+  "/images/properties/atlanta-ga/IMG_2218.jpeg",
+  "/images/properties/atlanta-ga/IMG_2219.jpeg",
+  "/images/properties/atlanta-ga/IMG_2220.jpeg",
+  "/images/properties/atlanta-ga/IMG_2221.jpeg",
+  "/images/properties/atlanta-ga/IMG_2222.jpeg",
+  "/images/properties/atlanta-ga/IMG_2223.jpeg",
+  "/images/properties/atlanta-ga/IMG_2224.jpeg",
+  "/images/properties/atlanta-ga/IMG_2225.jpeg",
+  "/images/properties/atlanta-ga/IMG_2226.jpeg",
+  "/images/properties/atlanta-ga/IMG_2227.jpeg",
+  "/images/properties/atlanta-ga/IMG_2228.jpeg",
+  "/images/properties/atlanta-ga/IMG_2229.jpeg",
+  "/images/properties/atlanta-ga/IMG_2230.jpeg",
+  "/images/properties/atlanta-ga/IMG_2231.jpeg",
+  "/images/properties/atlanta-ga/IMG_2232.jpeg",
+  "/images/properties/atlanta-ga/IMG_2233.jpeg",
+  "/images/properties/atlanta-ga/IMG_2234.jpeg",
+  "/images/properties/atlanta-ga/IMG_2235.jpeg",
+  "/images/properties/atlanta-ga/IMG_2236.jpeg",
+  "/images/properties/atlanta-ga/IMG_2237.jpeg",
+  "/images/properties/atlanta-ga/IMG_2238.jpeg",
+  "/images/properties/atlanta-ga/IMG_2239.jpeg",
+  "/images/properties/atlanta-ga/IMG_2240.jpeg",
+  "/images/properties/atlanta-ga/IMG_2241.jpeg",
+  "/images/properties/atlanta-ga/IMG_2242.jpeg",
+  "/images/properties/atlanta-ga/IMG_2243.jpeg",
+  "/images/properties/atlanta-ga/IMG_2244.jpeg",
+  "/images/properties/atlanta-ga/IMG_2245.jpeg",
+],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+
 ];
+
+
 
 // Return all publicly available properties
 export function getAvailableProperties(): Property[] {
-  return PROPERTY_DATA.filter((property) => property.available);
+  return PROPERTY_DATA.filter(
+    (property) => property.available === true
+  );
 }
 
 // Return only available featured properties
 export function getFeaturedProperties(): Property[] {
   return PROPERTY_DATA.filter(
-    (property) => property.available && property.featured
+    (property) =>
+      property.available === true &&
+      property.featured === true
   );
 }
 
-// Find one property using its unique URL slug
+// Find a property using its URL slug
 export function getPropertyBySlug(
   slug: string
 ): Property | undefined {
+  const normalizedSlug = slug.trim().toLowerCase();
+
   return PROPERTY_DATA.find(
-    (property) => property.slug === slug
+    (property) =>
+      property.slug.trim().toLowerCase() === normalizedSlug
   );
 }
 
-// Find one property using its ID
+// Find a property using its ID
 export function getPropertyById(
   id: string
 ): Property | undefined {
+  const normalizedId = id.trim();
+
   return PROPERTY_DATA.find(
-    (property) => property.id === id
+    (property) => property.id === normalizedId
   );
 }
+
