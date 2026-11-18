@@ -1596,7 +1596,7 @@ export const PROPERTY_DATA: Property[] = [
     available: true,
   },
 
-    {
+  {
     id: "32",
     slug: "frisco-tx",
     name: "Frisco TX Property",
@@ -1644,6 +1644,34 @@ export const PROPERTY_DATA: Property[] = [
   "/images/properties/frisco_tx/IMG_0835.jpeg",
   "/images/properties/frisco_tx/IMG_0836.jpeg",
   "/images/properties/frisco_tx/IMG_0837.jpeg",
+],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
+
+  {
+    id: "33",
+    slug: "houston-tx",
+    name: "Houston TX Property",
+    city: "Houston",
+    destination: "Houston",
+    bedrooms: 4,
+    bathrooms: 5,
+    nightlyRate: 500,
+    description:
+      "A comfortable Houston residence featuring four bedrooms and five bathrooms.",
+    coverPhoto: "/images/picture/7.jpg",
+    gallery: [
+  "/images/picture/7.jpg",
+  "/images/properties/houston-tx/1.jpg",
+  "/images/properties/houston-tx/2.jpg",
+  "/images/properties/houston-tx/3.jpg",
+  "/images/properties/houston-tx/4.jpg",
+  "/images/properties/houston-tx/5.jpg",
+  "/images/properties/houston-tx/6.jpg",
+  "/images/properties/houston-tx/7.jpg",
+
 ],
     amenities: [],
     featured: false,
