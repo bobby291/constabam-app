@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "constabam Shortlet",
+  title: "Constabam Shortlets",
   description: "Live Stay and Relax",
 };
 
