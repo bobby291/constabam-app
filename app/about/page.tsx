@@ -476,7 +476,7 @@ export default function AboutPage() {
             </Link>
 
             <Link
-              href="/inquiry"
+              href="/inquires"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#D9B94F] px-7 py-3.5 text-sm font-bold text-[#123C2D] shadow-lg transition hover:bg-[#E8CB72] hover:shadow-xl"
             >
               Send an inquiry

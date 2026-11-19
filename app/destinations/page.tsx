@@ -639,7 +639,7 @@ export default function DestinationPage() {
               </div>
 
               <Link
-                href="/inquiry"
+                href="/inquires"
                 className="inline-flex min-h-[53px] shrink-0 items-center justify-center gap-3 rounded-lg bg-[#C8A84C] px-7 py-4 text-[13px] font-bold text-[#173C2B] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#E0C16A] hover:shadow-xl"
               >
                 Send an inquiry

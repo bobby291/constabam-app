@@ -758,7 +758,7 @@ export default function BookingProcess() {
 
           {/* Primary CTA */}
           <Link
-            href="/inquire"
+            href="/inquires"
             className="
               inline-flex h-[50px]
               w-full items-center justify-center

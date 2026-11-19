@@ -67,7 +67,7 @@ export default function HeroPage() {
                 href="/contact"
                 className="inline-flex min-h-[62px] items-center justify-center rounded-full border-2 border-[#CBB15E] bg-[#FFFDF7] px-12 text-base font-medium text-[#20221F] shadow-[0_5px_14px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#F8F1DA]"
               >
-                Send inquiry
+                Learn More
               </a>
 
             </div>
