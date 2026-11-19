@@ -1656,11 +1656,11 @@ export const PROPERTY_DATA: Property[] = [
     name: "Houston TX Property",
     city: "Houston",
     destination: "Houston",
-    bedrooms: 4,
-    bathrooms: 5,
+    bedrooms: 2,
+    bathrooms: 2,
     nightlyRate: 500,
     description:
-      "A comfortable Houston residence featuring four bedrooms and five bathrooms.",
+      "A comfortable Houston residence featuring two bedrooms and two bathrooms.",
     coverPhoto: "/images/picture/7.jpg",
     gallery: [
   "/images/picture/7.jpg",
@@ -1685,11 +1685,11 @@ export const PROPERTY_DATA: Property[] = [
     name: "Atlanta Property",
     city: "Atlanta",
     destination: "Atlanta",
-    bedrooms: 4,
-    bathrooms: 5.5,
+    bedrooms: 7,
+    bathrooms: 7,
     nightlyRate: 600,
     description:
-      "A comfortable Atlanta residence featuring four bedrooms and five bathrooms.",
+      "A comfortable Atlanta residence featuring seven bedrooms and seven bathrooms.",
     coverPhoto: "/images/picture/2.jpg",
     gallery: [
   "/images/properties/atlanta-prop2/2.jpg",
@@ -1842,7 +1842,7 @@ export const PROPERTY_DATA: Property[] = [
     bathrooms: 7.5,
     nightlyRate: 800,
     description:
-      "A comfortable Atlanta residence featuring four bedrooms and five bathrooms.",
+      "A comfortable Atlanta residence featuring eight bedrooms and seven bathrooms.",
     coverPhoto:     "/images/properties/blue-rige/23.jpg",
     gallery: [
   "/images/properties/blue-rige/23.jpg",
@@ -1890,11 +1890,11 @@ export const PROPERTY_DATA: Property[] = [
     name: "Houston TX Property",
     city: "Houston",
     destination: "Houston",
-    bedrooms: 4,
-    bathrooms: 5.5,
-    nightlyRate: 600,
+    bedrooms: 1,
+    bathrooms: 1.5,
+    nightlyRate: 130,
     description:
-      "A comfortable Houston residence featuring four bedrooms and five bathrooms.",
+      "A comfortable Houston residence featuring one bedroom and one bathroom.",
     coverPhoto:  "/images/properties/houston-tx3/1.jpg",
     gallery: [
   "/images/properties/houston-tx3/1.jpg",
@@ -1921,11 +1921,11 @@ export const PROPERTY_DATA: Property[] = [
     name: "Atlanta Property",
     city: "Atlanta",
     destination: "Atlanta",
-    bedrooms: 4,
-    bathrooms: 5.5,
+    bedrooms: 7,
+    bathrooms: 8,
     nightlyRate: 800,
     description:
-      "A comfortable Atlanta residence featuring four bedrooms and five bathrooms.",
+      "A comfortable Atlanta residence featuring seven bedrooms and eight bathrooms.",
     coverPhoto:   "/images/properties/atlanta-prop3/26.jpg",
     gallery: [
   "/images/properties/atlanta-prop3/26.jpg",
