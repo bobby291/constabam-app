@@ -1882,7 +1882,7 @@ export const PROPERTY_DATA: Property[] = [
     available: true,
   },
 
-      {
+  {
     id: "38",
     slug: "houston--property2",
     name: "Houston TX Property",
@@ -1963,6 +1963,33 @@ export const PROPERTY_DATA: Property[] = [
   },
 
 
+  {
+    id: "38",
+    slug: "cypress-property",
+    name: "Cypress TX, Property",
+    city: "Cypress",
+    destination: "TX",
+    bedrooms: 7,
+    bathrooms: 6,
+    nightlyRate: 800,
+    description:
+      "A comfortable Cypress residence featuring seven bedrooms and six bathrooms.",
+    coverPhoto:  "/images/properties/cypress-tx/3.jpg",
+    gallery: [
+  "/images/properties/cypress-tx/1.jpg",
+  "/images/properties/cypress-tx/2.jpg",
+  "/images/properties/cypress-tx/4.jpg",
+  "/images/properties/cypress-tx/5.jpg",
+  "/images/properties/cypress-tx/6.jpg",
+  "/images/properties/cypress-tx/7.jpg",
+  "/images/properties/cypress-tx/8.jpg",
+  "/images/properties/cypress-tx/9.jpg",
+  "/images/properties/cypress-tx/10.jpg",
+],
+    amenities: [],
+    featured: false,
+    available: true,
+  },
 ];
 
 
