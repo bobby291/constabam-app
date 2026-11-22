@@ -462,27 +462,6 @@ export default function PropertyDetailClient({
               </div>
             </section>
 
-            {/* House rules */}
-            <section className="pt-8">
-              <div className="rounded-2xl border border-[#E9E3D4] bg-[#F1EEE5] p-5 sm:p-6">
-                <div className="mb-3 flex items-center gap-3">
-                  <ShieldCheck
-                    size={22}
-                    className="text-[#987A35]"
-                  />
-
-                  <h2 className="font-semibold text-[#173C2D]">
-                    Party policy
-                  </h2>
-                </div>
-
-                <p className="text-sm leading-7 text-gray-600">
-                  No parties or events. Quiet hours 10 PM – 8 AM.
-                  Guests must be 25+ to book. Maximum occupancy is
-                  strictly enforced.
-                </p>
-              </div>
-            </section>
           </div>
 
           {/* Right inquiry card */}

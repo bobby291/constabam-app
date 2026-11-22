@@ -53,6 +53,22 @@ const properties: Property[] = [
   { id: "miami-five-bedroom", name: "Miami Five-Bedroom Residence", city: "Miami", state: "FL", rate: 550 },
   { id: "fort-lauderdale-retreat", name: "Fort Lauderdale Five-Bedroom Retreat", city: "Fort Lauderdale", state: "FL", rate: 507 },
   { id: "charlotte-signature", name: "Charlotte Signature Home", city: "Charlotte", state: "NC", rate: 404 },
+    // NEW PROPERTIES FROM PROPERTY_DATA
+  { id: "pinecrest-contemporary", name: "Pinecrest Contemporary Retreat", city: "Pinecrest", state: "FL", rate: 600 },
+  { id: "atlanta-ga", name: "Atlanta GA Property", city: "Atlanta", state: "GA", rate: 700 },
+  { id: "frisco-tx", name: "Frisco TX Property", city: "Frisco", state: "TX", rate: 1000 },
+  { id: "houston-tx-500", name: "Houston TX Property", city: "Houston", state: "TX", rate: 500 },
+  { id: "atlanta-property-600", name: "Atlanta Property", city: "Atlanta", state: "GA", rate: 600 },
+  { id: "houston-property-600", name: "Houston TX Property", city: "Houston", state: "TX", rate: 600 },
+  { id: "blue-ridge", name: "Blue Ridge GA", city: "Blue Ridge", state: "GA", rate: 800 },
+  { id: "houston-property-130", name: "Houston TX Property", city: "Houston", state: "TX", rate: 130 },
+  { id: "atlanta-property-800", name: "Atlanta Property", city: "Atlanta", state: "GA", rate: 800 },
+  { id: "cypress-property", name: "Cypress TX, Property", city: "Cypress", state: "TX", rate: 800 },
+  { id: "miami-waterfront", name: "Miami Beach Waterfront Estate", city: "Miami Beach", state: "FL", rate: 600 },
+  { id: "fort-worth-modern", name: "Fort Worth Morden Home", city: "Fort Worth", state: "TX", rate: 440 },
+  { id: "sherman-oaks", name: "Sherma Oaks Modern Retreat", city: "Sherman Oaks", state: "CA", rate: 450 },
+  { id: "miami-lux", name: "Miami Beach Luxury Pool Estate", city: "Miami Beach", state: "FL", rate: 600 },
+  { id: "fort-lauderdale-pool", name: "Fort Lauderdale Modern Pool Home", city: "Fort Lauderdale", state: "FL", rate: 515 },
 ];
 
 const paymentMethods = [
