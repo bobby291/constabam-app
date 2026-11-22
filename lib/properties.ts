@@ -2004,10 +2004,10 @@ export const PROPERTY_DATA: Property[] = [
     nightlyRate: 405,
     description:
       "A comfortable Los Angeles residence featuring five bedrooms and six bathrooms.",
-    coverPhoto:  "/images/properties/los-angeles-five/IMG_0374.jpg",
+    coverPhoto:  "/images/properties/los-angeles-five/IMG_9297.jpg",
     gallery: [
-  "/images/properties/los-angeles-five/IMG_0374.jpg",
-  "/images/properties/los-angeles-five/IMG_0375.jpg",
+  "/images/properties/los-angeles-five/IMG_9297.jpg",
+  "/images/properties/los-angeles-five/IMG_9298.jpg",
   "/images/properties/los-angeles-five/IMG_9299.jpg",
   "/images/properties/los-angeles-five/IMG_9300.jpg",
   "/images/properties/los-angeles-five/IMG_9301.jpg",
